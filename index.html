@@ -32,10 +32,8 @@
      Microsoft completed courses, Cyberbit hands-on labs.
    · Strathmore — coursework toward the M.Sc.
 
- PRIVACY: the email address does not appear anywhere in this file. It
- is assembled in the browser only when a visitor clicks "Show email
- address". That defeats automated scrapers, not a determined human —
- a forwarding alias remains the stronger control.
+ PRIVACY: no email address appears anywhere in this file, in any form.
+ Contact is routed through LinkedIn and GitHub only.
 
  SERVER HEADERS to set at your host (cannot be set from HTML):
    Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
@@ -316,9 +314,6 @@ footer{border-top:1px solid var(--line); padding:38px 0; margin-top:60px}
 .meta-line{font-size:.88rem; color:var(--muted); margin-bottom:10px}
 .meta-line b{color:var(--accent); font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; display:block; margin-bottom:3px; font-weight:500}
 .sub-h{font-family:var(--serif); font-weight:400; font-size:1.5rem; margin:52px 0 18px}
-.mail-out{margin-top:22px; font-family:var(--mono); font-size:1rem; color:var(--accent); word-break:break-all}
-.mail-out small{display:block; font-family:var(--sans); font-size:.75rem; color:var(--muted); margin-top:6px}
-button.btn{font-family:inherit; cursor:pointer}
 .work .card .card-body p:last-of-type{margin-bottom:0}
 
 /* ---- real imagery ---- */
@@ -859,35 +854,39 @@ button.btn{font-family:inherit; cursor:pointer}
     </div>
 
     <div class="arts">
-      <article class="art rv">
-        
+      <a class="art rv" href="https://medium.com/@sirbiti/the-big-fundamental-72c994ebe57e" target="_blank" rel="noopener noreferrer">
         <div class="art-body">
-          <div class="art-meta">[EDIT] Category &middot; [EDIT] Date</div>
-          <h3>[EDIT] Post title</h3>
-          <p>[EDIT] One or two lines of standfirst. Paste your latest Medium post here.</p>
-          <div class="read">Read &rarr;</div>
+          <div class="art-meta">Medium</div>
+          <h3>The Big Fundamental</h3>
+          <div class="read">Read on Medium &rarr;</div>
         </div>
-      </article>
+      </a>
 
-      <article class="art rv">
-        
+      <a class="art rv" href="https://medium.com/@sirbiti/open-source-intelligence-8477751ff986" target="_blank" rel="noopener noreferrer">
         <div class="art-body">
-          <div class="art-meta">[EDIT] Category &middot; [EDIT] Date</div>
-          <h3>[EDIT] Post title</h3>
-          <p>[EDIT] Standfirst.</p>
-          <div class="read">Read &rarr;</div>
+          <div class="art-meta">Cybersecurity</div>
+          <h3>Open Source Intelligence</h3>
+          <div class="read">Read on Medium &rarr;</div>
         </div>
-      </article>
+      </a>
 
-      <article class="art rv">
-        
+      <a class="art rv" href="https://medium.com/@sirbiti/integration-a0e098f043c6" target="_blank" rel="noopener noreferrer">
         <div class="art-body">
-          <div class="art-meta">[EDIT] Category &middot; [EDIT] Date</div>
-          <h3>[EDIT] Post title</h3>
-          <p>[EDIT] Standfirst.</p>
+          <div class="art-meta">Career &middot; February 2025</div>
+          <h3>Integration</h3>
+          <p>On blending cybersecurity, basketball and work instead of keeping them in separate boxes &mdash; inspired by watching a mentor do exactly that.</p>
           <div class="read">Read &rarr;</div>
         </div>
-      </article>
+      </a>
+
+      <a class="art rv" href="https://medium.com/@sirbiti/every-level-has-a-devil-0c9858726533" target="_blank" rel="noopener noreferrer">
+        <div class="art-body">
+          <div class="art-meta">Reflection &middot; September 2025</div>
+          <h3>Every Level Has a Devil</h3>
+          <p>From Kampala's Banda neighborhood to dropping out of Makerere and back &mdash; on the doubt that shadows every achievement.</p>
+          <div class="read">Read &rarr;</div>
+        </div>
+      </a>
     </div>
 
     <div class="rv" style="margin-top:26px; text-align:center">
@@ -904,12 +903,9 @@ button.btn{font-family:inherit; cursor:pointer}
         software engineering &mdash; New York or relocating.
       </p>
       <div class="contact-row">
-        <button class="btn solid magnetic" id="mailBtn"
-                data-u="aXN5YWdpMTNlYg==" data-d="Z21haWwuY29t">Show email address</button>
-        <a class="btn magnetic" href="https://linkedin.com/in/abramisyagi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn solid magnetic" href="https://linkedin.com/in/abramisyagi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a class="btn magnetic" href="https://github.com/sabiti12" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
-      <p id="mailOut" class="mail-out" hidden></p>
       <div class="detail-row">
         <div><span>Based in</span><b>New York, NY</b></div>
         <div><span>Open to</span><b>Relocation</b></div>
@@ -1014,17 +1010,6 @@ button.btn{font-family:inherit; cursor:pointer}
   burger.addEventListener('click',function(){menu.classList.toggle('open')});
   menu.addEventListener('click',function(e){ if(e.target.tagName==='A') menu.classList.remove('open'); });
 
-
-  /* ---------- email reveal (address never sits in the HTML source) ---------- */
-  var mb=document.getElementById('mailBtn'), mo=document.getElementById('mailOut');
-  if(mb){
-    mb.addEventListener('click',function(){
-      var addr=atob(mb.dataset.u)+String.fromCharCode(64)+atob(mb.dataset.d);
-      mo.hidden=false;
-      mo.innerHTML='<a href="mailto:'+addr+'">'+addr+'</a><small>Click to open your mail app.</small>';
-      mb.remove();
-    });
-  }
 
   /* ---------- footer meta ---------- */
   document.getElementById('yr').textContent=new Date().getFullYear();
